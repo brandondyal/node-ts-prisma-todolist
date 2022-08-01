@@ -18,9 +18,6 @@
   ],
   "settings": {
     "import/resolver": {
-      "node": {
-        "extensions": [".ts", ".d.ts", ".json"]
-      },
       "typescript": {
         "alwaysTryTypes": true
       }

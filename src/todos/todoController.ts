@@ -1,7 +1,7 @@
 import express from 'express';
+import { todoSchemas } from '@/request-schemas';
+import { validateBody, validateQueryParams } from '@/middleware/validate';
 import todoService from './todoService';
-import { todoSchemas } from '../request-schemas';
-import { validateBody, validateQueryParams } from '../middleware/validate';
 
 const router = express.Router();
 

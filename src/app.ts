@@ -2,10 +2,10 @@ import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 
-import { errorHandler, invalidPathHandler } from './middleware/error';
-import todoController from './todos/todoController';
-import todoListController from './todoLists/todoListController';
-import userController from './users/userController';
+import { errorHandler, invalidPathHandler } from '@/middleware/error';
+import todoController from '@/todos/todoController';
+import todoListController from '@/todoLists/todoListController';
+import userController from '@/users/userController';
 
 const app = express();
 

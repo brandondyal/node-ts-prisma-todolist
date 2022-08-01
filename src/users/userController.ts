@@ -1,7 +1,7 @@
 import express from 'express';
+import { userSchemas } from '@/request-schemas';
+import { validateBody, validateQueryParams } from '@/middleware/validate';
 import userService from './userService';
-import { userSchemas } from '../request-schemas';
-import { validateBody, validateQueryParams } from '../middleware/validate';
 
 const router = express.Router();
 
