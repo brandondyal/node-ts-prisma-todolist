@@ -67,7 +67,7 @@ router.delete('/:id', async (req, res, next) => {
     const { id } = req.params;
     await todoListService.deleteById(id);
 
-    res.status(204).json({});
+    res.status(204).end();
   } catch (error) {
     next(error);
   }

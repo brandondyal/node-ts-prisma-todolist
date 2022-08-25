@@ -29,7 +29,7 @@ export const errorHandler = (
   const { code, name, message } = error;
   const status = statusCodeMap[code] || statusCodeMap[name] || 500;
 
-  response.status(status).send(message);
+  response.status(status).end(message);
 };
 
 export const invalidPathHandler = (
@@ -38,5 +38,5 @@ export const invalidPathHandler = (
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _next: NextFunction
 ) => {
-  response.status(404).send('THESE ARE NOT THE DROIDS YOU ARE LOOKING FOR');
+  response.status(404).end('THESE ARE NOT THE DROIDS YOU ARE LOOKING FOR');
 };
