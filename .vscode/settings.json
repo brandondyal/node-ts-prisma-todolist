@@ -2,7 +2,7 @@
   "typescript.tsdk": "node_modules/typescript/lib",
 
   "eslint.enable": true,
-  "eslint.validate": ["typescript", "json"],
+  "eslint.validate": ["typescript"],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": ["source.fixAll.eslint"],
 
