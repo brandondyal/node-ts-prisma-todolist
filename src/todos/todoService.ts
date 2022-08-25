@@ -3,9 +3,11 @@ import prisma from '../client';
 
 const todoService = {
   getByListId: (listId: string) =>
-    prisma.todo.findMany({
-      where: { listId: String(listId) },
-    }),
+    prisma.todoList
+      .findUniqueOrThrow({
+        where: { id: String(listId) },
+      })
+      .todos(),
   create: (todo: Todo) => {
     const { listId, title } = todo;
 

@@ -74,6 +74,14 @@ describe(`GET ${basePath}/?listId=todoList.id`, () => {
 
     expect(getTodosResponse.text).toEqual('"listId" is required');
   });
+
+  it('should return 404 when listId query param is bad', async () => {
+    const getTodosResponse = await supertest(app)
+      .get(`${basePath}/?listId=404`)
+      .expect(404);
+
+    expect(getTodosResponse.text).toEqual('No TodoList found');
+  });
 });
 
 describe(`PUT ${basePath}/:id`, () => {

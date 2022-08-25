@@ -45,6 +45,14 @@ describe(`GET ${basePath}?userId=user.id`, () => {
       '"userId" is not allowed to be empty'
     );
   });
+
+  it('should return 404 when userId query param is bad', async () => {
+    const getByUserIdResponse = await supertest(app)
+      .get(`${basePath}/?userId=404`)
+      .expect(404);
+
+    expect(getByUserIdResponse.text).toEqual('No User found');
+  });
 });
 
 describe(`POST ${basePath}`, () => {

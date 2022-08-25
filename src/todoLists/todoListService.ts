@@ -17,21 +17,9 @@ const todoListService = {
       },
     }),
   getAllByUserId: (userId: string) =>
-    prisma.todoList.findMany({
-      include: {
-        users: true,
-        todos: true,
-      },
-      where: {
-        users: {
-          some: {
-            id: {
-              contains: userId,
-            },
-          },
-        },
-      },
-    }),
+    prisma.user
+      .findUniqueOrThrow({ where: { id: String(userId) } })
+      .todoLists({ include: { users: true, todos: true } }),
   getById: (id: string) =>
     prisma.todoList.findUniqueOrThrow({
       include: {
